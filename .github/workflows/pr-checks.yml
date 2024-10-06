@@ -1,0 +1,27 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Validate that only contributors.js was changed
+      run: |
+        CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
+        if [[ "$CHANGED_FILES" != "contributors.js" ]]; then
+          echo "Error: You are only allowed to change contributors.js"
+          exit 1
+        fi
+
+    - name: Validate HTML
+      run: |
+        npm install -g htmlhint
+        htmlhint index.html
