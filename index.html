@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-Space Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Open-Space</h1>
+            <p>Welcome to our introduction to open source workshop! Here, we'll explore the world of collaborative development and learn how to contribute to open source projects.</p>
+            
+            <h2>Contributors</h2>
+            <div id="nameList"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add your name in this javascript array
+        const contributors = [
+            "Alice Johnson", "Bob Smith", "Charlie Brown", "Diana Martinez",
+            "Ethan Williams", "Fiona Taylor", "George Davis", "Hannah Wilson",
+            "Ian Thompson", "Julia Roberts", "Kevin Chen", "Laura Garcia",
+            "Michael Lee", "Natalie Wong", "Oscar Fernandez", "Patricia Kim",
+            "Quentin Harris", "Rachel Patel", "Samuel Jackson", "Tina Turner"
+        ];
+
+        
+        function populateNameList() {
+            const nameList = document.getElementById('nameList');
+            contributors.forEach(name => {
+                const nameItem = document.createElement('div');
+                nameItem.className = 'name-item';
+                nameItem.textContent = name;
+                nameList.appendChild(nameItem);
+            });
+        }
+
+       
+        window.onload = populateNameList;
+    </script>
+</body>
+</html>
