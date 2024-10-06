@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open-Space Workshop</title>
+    <title>/Open-Space Workshop</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
-
 </head>
 <body>
     <div class="container">
@@ -19,12 +18,9 @@
         </div>
     </div>
 
-    <script>
-        // Add your name in this javascript array
-        const contributors = [
-            "Harish", "Swayam", "Noumaan", "Ritesh", "Jeyanth"
-        ];
 
+    <script type="module">
+        import { contributors } from './contributors.js';
         
         function populateNameList() {
             const nameList = document.getElementById('nameList');
@@ -36,7 +32,6 @@
             });
         }
 
-       
         window.onload = populateNameList;
     </script>
 </body>
